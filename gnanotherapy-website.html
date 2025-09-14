@@ -14,16 +14,16 @@
         }
 
         :root {
-            --primary-dark: #1a1f2e;
-            --primary-blue: #2c3e50;
-            --accent-blue: #3498db;
-            --accent-teal: #16a085;
-            --neutral-gray: #7f8c8d;
-            --light-gray: #ecf0f1;
-            --white: #ffffff;
-            --text-dark: #2c3e50;
-            --text-light: #5d6d7e;
-            --border-light: #e8e8e8;
+            --primary-dark: #0D1B2A;
+            --primary-blue: #1B263B;
+            --accent-teal: #00BFA5;
+            --accent-blue-muted: #415A77;
+            --neutral-gray: #778DA9;
+            --light-gray-bg: #f8f9fa;
+            --white: #FFFFFF;
+            --text-dark: #0D1B2A;
+            --text-light: #415A77;
+            --border-light: #CFD8DC;
         }
 
         body {
@@ -35,7 +35,7 @@
         }
 
         /* Typography */
-        h1, h2, h3 {
+        h1, h2, h3, h4 {
             font-family: 'Merriweather', Georgia, serif;
             color: var(--primary-dark);
             font-weight: 400;
@@ -50,7 +50,11 @@
             left: 0;
             right: 0;
             z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .header.scrolled {
+             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
 
         .header-content {
@@ -71,7 +75,7 @@
         }
 
         .logo span {
-            color: var(--accent-blue);
+            color: var(--accent-blue-muted);
             font-weight: 400;
         }
 
@@ -97,7 +101,7 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: var(--accent-blue);
+            background: var(--accent-teal);
             transition: width 0.2s ease;
         }
 
@@ -110,7 +114,7 @@
         }
 
         .nav-contact {
-            background: var(--accent-blue);
+            background: var(--accent-teal);
             color: var(--white) !important;
             padding: 0.65rem 1.75rem;
             border-radius: 4px;
@@ -122,44 +126,48 @@
         }
 
         .nav-contact:hover {
-            background: #2980b9;
+            background: #009688; /* Darker teal */
         }
 
         /* Hero Section */
         .hero {
-            padding: 10rem 2rem 5rem;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            min-height: 90vh;
+            padding: 12rem 2rem 8rem;
+            background-image: linear-gradient(rgba(13, 27, 42, 0.75), rgba(13, 27, 42, 0.75)), url('https://images.unsplash.com/photo-1532187863486-abf9db50b692?w=1200&q=80');
+            background-size: cover;
+            background-position: center center;
+            background-attachment: fixed;
+            min-height: 95vh;
             display: flex;
             align-items: center;
+            text-align: center;
         }
 
         .hero-container {
-            max-width: 1400px;
+            max-width: 900px;
             margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 5rem;
-            align-items: center;
         }
 
         .hero-content h1 {
-            font-size: 3rem;
+            font-size: 3.25rem;
             line-height: 1.2;
             margin-bottom: 1.5rem;
-            color: var(--primary-dark);
+            color: var(--white);
         }
 
         .hero-content .subtitle {
             font-size: 1.25rem;
-            color: var(--text-light);
-            margin-bottom: 2rem;
+            color: var(--light-gray-bg);
+            margin-bottom: 2.5rem;
             line-height: 1.6;
+            max-width: 750px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .hero-buttons {
             display: flex;
             gap: 1rem;
+            justify-content: center;
             margin-top: 2rem;
         }
 
@@ -167,50 +175,38 @@
             padding: 0.875rem 2rem;
             border-radius: 4px;
             text-decoration: none;
-            font-weight: 500;
+            font-weight: 600;
             transition: all 0.2s ease;
             display: inline-block;
+            border: 2px solid transparent;
         }
 
         .btn-primary {
-            background: var(--accent-blue);
+            background: var(--accent-teal);
             color: var(--white);
+            border-color: var(--accent-teal);
         }
 
         .btn-primary:hover {
-            background: #2980b9;
-            transform: translateY(-1px);
+            background: #009688;
+            border-color: #009688;
+            transform: translateY(-2px);
         }
 
         .btn-secondary {
             background: transparent;
-            color: var(--primary-dark);
-            border: 2px solid var(--primary-dark);
+            color: var(--white);
+            border: 2px solid var(--white);
         }
 
         .btn-secondary:hover {
-            background: var(--primary-dark);
-            color: var(--white);
-        }
-
-        .hero-image {
-            width: 100%;
-            height: 500px;
-            background: var(--light-gray);
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-        }
-
-        .hero-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+            background: var(--white);
+            color: var(--primary-dark);
         }
 
         /* Section Styles */
         .section {
-            padding: 5rem 2rem;
+            padding: 6rem 2rem;
         }
 
         .section-container {
@@ -225,7 +221,7 @@
         }
 
         .section-header h2 {
-            font-size: 2.5rem;
+            font-size: 2.75rem;
             margin-bottom: 1rem;
         }
 
@@ -237,21 +233,19 @@
 
         /* Mission Section */
         .mission {
-            background: #fafbfc;
+            background: var(--light-gray-bg);
         }
 
         .mission-content {
             display: grid;
             grid-template-columns: 1fr 1.5fr;
-            gap: 4rem;
+            gap: 5rem;
             align-items: center;
-            margin-bottom: 4rem;
         }
 
         .mission-image {
             width: 100%;
-            height: 400px;
-            background: var(--light-gray);
+            height: 450px;
             border-radius: 8px;
             overflow: hidden;
         }
@@ -277,37 +271,24 @@
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
-            margin-top: 4rem;
+            margin-top: 5rem;
         }
 
         .point-card {
             background: var(--white);
-            padding: 2rem;
+            padding: 2.5rem;
             border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border: 1px solid var(--border-light);
             transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
 
         .point-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
         }
-
-        .point-icon {
-            width: 50px;
-            height: 50px;
-            background: var(--accent-blue);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--white);
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
+        
         .point-card h4 {
-            font-size: 1.15rem;
+            font-size: 1.25rem;
             margin-bottom: 0.75rem;
             color: var(--primary-dark);
         }
@@ -326,7 +307,7 @@
         .tech-showcase {
             display: grid;
             grid-template-columns: 1.5fr 1fr;
-            gap: 4rem;
+            gap: 5rem;
             align-items: center;
             margin-bottom: 4rem;
         }
@@ -348,10 +329,11 @@
             position: relative;
             color: var(--text-light);
             line-height: 1.7;
+            font-size: 1.05rem;
         }
 
         .tech-list li::before {
-            content: '→';
+            content: '✓';
             position: absolute;
             left: 0;
             color: var(--accent-teal);
@@ -360,35 +342,38 @@
 
         .tech-image {
             width: 100%;
-            height: 400px;
-            background: var(--light-gray);
+            height: auto;
             border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border: 1px solid var(--border-light);
+            background: var(--light-gray-bg);
+            padding: 1rem;
         }
 
         .tech-image img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain;
+            border-radius: 4px;
         }
 
         .tech-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
-            margin-top: 3rem;
+            margin-top: 5rem;
         }
 
         .tech-feature {
             text-align: center;
             padding: 2rem;
+            border: 1px solid var(--border-light);
+            border-radius: 8px;
         }
 
         .tech-feature-image {
             width: 100%;
             height: 200px;
-            background: var(--light-gray);
             border-radius: 8px;
             margin-bottom: 1.5rem;
             overflow: hidden;
@@ -401,7 +386,7 @@
         }
 
         .tech-feature h4 {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             margin-bottom: 0.75rem;
             color: var(--primary-dark);
         }
@@ -414,7 +399,7 @@
 
         /* Team Section */
         .team {
-            background: #fafbfc;
+            background: var(--light-gray-bg);
         }
 
         .team-members {
@@ -427,7 +412,7 @@
             background: var(--white);
             border-radius: 8px;
             padding: 2.5rem;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border: 1px solid var(--border-light);
         }
 
         .member-header {
@@ -442,8 +427,8 @@
         }
 
         .member-title {
-            color: var(--accent-blue);
-            font-weight: 500;
+            color: var(--accent-teal);
+            font-weight: 600;
         }
 
         .member-bio {
@@ -454,12 +439,15 @@
         .member-bio p {
             margin-bottom: 1rem;
         }
+        .member-bio p:last-child {
+            margin-bottom: 0;
+        }
 
         /* Patent Section */
         .patent {
-            background: var(--primary-dark);
+            background: var(--primary-blue);
             color: var(--white);
-            padding: 3rem 2rem;
+            padding: 4rem 2rem;
             text-align: center;
         }
 
@@ -478,11 +466,12 @@
             font-size: 0.9rem;
             text-transform: uppercase;
             letter-spacing: 1px;
+            font-weight: 500;
         }
 
         .patent h3 {
             color: var(--white);
-            font-size: 1.5rem;
+            font-size: 1.75rem;
             margin-bottom: 1rem;
         }
 
@@ -502,10 +491,10 @@
         }
 
         .contact-form {
-            background: #fafbfc;
+            background: var(--light-gray-bg);
             padding: 3rem;
             border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border: 1px solid var(--border-light);
         }
 
         .form-row {
@@ -519,6 +508,10 @@
             margin-bottom: 1.5rem;
         }
 
+        .form-group:last-child {
+            margin-bottom: 0;
+        }
+
         .form-group label {
             display: block;
             margin-bottom: 0.5rem;
@@ -530,48 +523,52 @@
         .form-group input,
         .form-group textarea {
             width: 100%;
-            padding: 0.75rem;
+            padding: 0.85rem;
             border: 1px solid var(--border-light);
             border-radius: 4px;
             font-size: 1rem;
-            transition: border-color 0.2s ease;
+            font-family: 'IBM Plex Sans', sans-serif;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
             background: var(--white);
         }
 
         .form-group input:focus,
         .form-group textarea:focus {
             outline: none;
-            border-color: var(--accent-blue);
+            border-color: var(--accent-teal);
+            box-shadow: 0 0 0 3px rgba(0, 191, 165, 0.2);
         }
 
         .form-submit {
-            background: var(--accent-blue);
+            background: var(--accent-teal);
             color: var(--white);
             border: none;
             padding: 0.875rem 2.5rem;
             border-radius: 4px;
             font-size: 1rem;
-            font-weight: 500;
+            font-weight: 600;
             cursor: pointer;
             transition: background 0.2s ease;
         }
 
         .form-submit:hover {
-            background: #2980b9;
+            background: #009688;
         }
 
         .contact-info {
             text-align: center;
-            margin-top: 3rem;
+            margin-top: 4rem;
             padding: 2rem;
-            background: #fafbfc;
+            background: var(--light-gray-bg);
             border-radius: 8px;
+            border: 1px solid var(--border-light);
         }
 
         .contact-info a {
-            color: var(--accent-blue);
+            color: var(--accent-teal);
             text-decoration: none;
             font-size: 1.25rem;
+            font-weight: 500;
         }
 
         .contact-info a:hover {
@@ -582,7 +579,7 @@
         .footer {
             background: var(--primary-dark);
             color: var(--white);
-            padding: 3rem 2rem;
+            padding: 4rem 2rem 3rem;
             text-align: center;
         }
 
@@ -629,7 +626,7 @@
         }
 
         .social-link:hover {
-            background: rgba(255,255,255,0.2);
+            background: var(--accent-teal);
             color: var(--white);
         }
 
@@ -646,6 +643,7 @@
             border: none;
             cursor: pointer;
             padding: 0.5rem;
+            z-index: 1001;
         }
 
         .mobile-toggle span {
@@ -658,7 +656,25 @@
         }
 
         /* Responsive */
+        @media (max-width: 992px) {
+            .mission-content,
+            .tech-showcase {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+             .tech-showcase {
+                grid-template-rows: auto auto;
+            }
+            .tech-showcase .tech-image {
+                grid-row: 1; /* Move image to top on smaller screens */
+            }
+        }
+
+
         @media (max-width: 768px) {
+            h1 { font-size: 2.5rem !important; }
+            h2 { font-size: 2rem !important; }
+
             .nav {
                 display: none;
                 position: absolute;
@@ -679,16 +695,6 @@
                 display: block;
             }
 
-            .hero-container,
-            .mission-content,
-            .tech-showcase {
-                grid-template-columns: 1fr;
-            }
-
-            .hero h1 {
-                font-size: 2rem;
-            }
-
             .mission-points,
             .tech-grid {
                 grid-template-columns: 1fr;
@@ -700,13 +706,13 @@
 
             .form-row {
                 grid-template-columns: 1fr;
+                 gap: 0;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
+    <header class="header" id="header">
         <div class="header-content">
             <a href="#" class="logo">
                 General <span>Nanotherapeutics</span>
@@ -725,7 +731,6 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero">
         <div class="hero-container">
             <div class="hero-content">
@@ -739,13 +744,9 @@
                     <a href="#about" class="btn btn-secondary">Learn More</a>
                 </div>
             </div>
-            <div class="hero-image">
-                <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800" alt="Microscopy visualization">
-            </div>
         </div>
     </section>
 
-    <!-- Mission Section -->
     <section class="mission section" id="about">
         <div class="section-container">
             <div class="section-header">
@@ -758,7 +759,7 @@
 
             <div class="mission-content">
                 <div class="mission-image">
-                    <img src="https://images.unsplash.com/photo-1631549916768-4119b2e5f926?w=800" alt="T-cell visualization">
+                     <img src="https://images.unsplash.com/photo-1631549916768-4119b2e5f926?w=800" alt="T-cell visualization">
                 </div>
                 <div class="mission-text">
                     <h3>Our Differentiated Approach</h3>
@@ -778,7 +779,6 @@
 
             <div class="mission-points">
                 <div class="point-card">
-                    <div class="point-icon">🎯</div>
                     <h4>Targeted Delivery</h4>
                     <p>
                         Nanoparticles attach to specific T cells in lymphoid clusters, delivering therapeutic 
@@ -786,7 +786,6 @@
                     </p>
                 </div>
                 <div class="point-card">
-                    <div class="point-icon">🔄</div>
                     <h4>Immune Restoration</h4>
                     <p>
                         Induces regulatory T cell proliferation and differentiation to restore natural 
@@ -794,7 +793,6 @@
                     </p>
                 </div>
                 <div class="point-card">
-                    <div class="point-icon">⚡</div>
                     <h4>Sustained Remission</h4>
                     <p>
                         Achieves long-term disease control through immune system reprogramming rather 
@@ -805,7 +803,6 @@
         </div>
     </section>
 
-    <!-- Technology Section -->
     <section class="technology section" id="technology">
         <div class="section-container">
             <div class="section-header">
@@ -828,7 +825,7 @@
                     </ul>
                 </div>
                 <div class="tech-image">
-                    <img src="https://images.unsplash.com/photo-1631557436217-a0fe4f8c067b?w=800" alt="Nanoparticle interaction">
+                    <img src="nanoparticle-treatment-diagram.jpg" alt="Diagram showing normal, autoimmune, and treated lymphosite clusters">
                 </div>
             </div>
 
@@ -867,7 +864,6 @@
         </div>
     </section>
 
-    <!-- Team Section -->
     <section class="team section" id="team">
         <div class="section-container">
             <div class="section-header">
@@ -934,7 +930,6 @@
         </div>
     </section>
 
-    <!-- Patent Section -->
     <section class="patent">
         <div class="patent-info">
             <span class="patent-badge">Patent Pending</span>
@@ -947,7 +942,6 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section class="contact section" id="contact">
         <div class="contact-content">
             <div class="section-header">
@@ -978,7 +972,9 @@
                         <label for="message">Message</label>
                         <textarea id="message" name="message" rows="6" required></textarea>
                     </div>
-                    <button type="submit" class="form-submit">Send Message</button>
+                    <div class="form-group">
+                         <button type="submit" class="form-submit">Send Message</button>
+                    </div>
                 </form>
             </div>
 
@@ -989,7 +985,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-links">
@@ -1000,20 +995,15 @@
             </div>
             
             <div class="footer-social">
-                <a href="https://twitter.com" target="_blank" class="social-link">
+                <a href="https://twitter.com" target="_blank" class="social-link" aria-label="Twitter">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/>
                     </svg>
                 </a>
-                <a href="https://linkedin.com" target="_blank" class="social-link">
+                <a href="https://linkedin.com" target="_blank" class="social-link" aria-label="LinkedIn">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/>
                         <circle cx="4" cy="4" r="2"/>
-                    </svg>
-                </a>
-                <a href="https://facebook.com" target="_blank" class="social-link">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
                     </svg>
                 </a>
             </div>
@@ -1041,33 +1031,27 @@
                         behavior: 'smooth',
                         block: 'start'
                     });
-                    document.getElementById('navMenu').classList.remove('active');
+                     if (document.getElementById('navMenu').classList.contains('active')) {
+                        document.getElementById('navMenu').classList.remove('active');
+                     }
                 }
             });
         });
 
-        // Form submission
+        // Form submission (prevents default and shows an alert for demo)
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            
-            const formData = new FormData(this);
-            const data = Object.fromEntries(formData);
-            
-            const subject = 'Inquiry from General Nanotherapeutics Website';
-            const body = `Name: ${data.firstName} ${data.lastName}%0D%0AEmail: ${data.email}%0D%0AMessage: ${data.message}`;
-            
-            window.location.href = `mailto:gnanotherapy@gmail.com?subject=${subject}&body=${body}`;
-            
+            alert('Thank you for your message!');
             this.reset();
         });
 
         // Header shadow on scroll
         window.addEventListener('scroll', function() {
-            const header = document.querySelector('.header');
-            if (window.scrollY > 10) {
-                header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+            const header = document.getElementById('header');
+            if (window.scrollY > 20) {
+                header.classList.add('scrolled');
             } else {
-                header.style.boxShadow = '0 2px 5px rgba(0,0,0,0.05)';
+                header.classList.remove('scrolled');
             }
         });
     </script>
