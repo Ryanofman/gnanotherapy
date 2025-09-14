@@ -417,6 +417,43 @@
             font-size: 1rem;
             line-height: 1.6;
         }
+        
+        /* Publications Section */
+        .publications {
+            background-color: var(--white);
+        }
+        
+        .publication-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .publication-item {
+            background: var(--light-gray-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-light);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .publication-item .pub-title {
+            font-weight: 500;
+            color: var(--primary-dark);
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+            flex-grow: 1;
+        }
+
+        .publication-item .pub-details {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            line-height: 1.5;
+        }
+
 
         /* Team Section */
         .team {
@@ -724,6 +761,10 @@
                 align-items: center;
                 text-align: center;
             }
+            
+            .publication-list {
+                grid-template-columns: 1fr;
+            }
 
             .nav {
                 display: none;
@@ -776,6 +817,7 @@
             <nav class="nav" id="navMenu">
                 <a href="#about">About</a>
                 <a href="#technology">Technology</a>
+                <a href="#publications">Publications</a>
                 <a href="#team">Leadership</a>
                 <a href="#contact" class="nav-contact">Contact</a>
             </nav>
@@ -920,6 +962,59 @@
         </div>
     </section>
 
+    <section class="publications section" id="publications">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Our Work & Publications</h2>
+                <p>
+                    Our platform is built on years of pioneering research published in leading scientific journals.
+                </p>
+            </div>
+            <div class="publication-list">
+                <div class="publication-item">
+                    <p class="pub-title">Nanoparticles loaded with IL-2 and TGF-β promote transplantation tolerance to alloantigen.</p>
+                    <p class="pub-details">Horwitz DA, et al. &bull; <em>Frontiers in Immunology</em> (2024)</p>
+                </div>
+                 <div class="publication-item">
+                    <p class="pub-title">Generating and Sustaining Stable Autoantigen-Specific CD4 and CD8 Regulatory T Cells in Lupus.</p>
+                    <p class="pub-details">Datta SK, et al. &bull; <em>Frontiers in Immunology</em> (2022)</p>
+                </div>
+                <div class="publication-item">
+                    <p class="pub-title">Nanoparticle-mediated delivery of IL-2 to T follicular helper cells protects BDF1 mice from lupus-like disease.</p>
+                    <p class="pub-details">Ferretti C, et al. &bull; <em>Rheumatology and Immunology Research</em> (2021)</p>
+                </div>
+                <div class="publication-item">
+                    <p class="pub-title">Strategies to Use Nanoparticles to Generate CD4 and CD8 Regulatory T Cells for the Treatment of SLE and Other Autoimmune Diseases.</p>
+                    <p class="pub-details">Horwitz DA, et al. &bull; <em>Frontiers in Immunology</em> (2021)</p>
+                </div>
+                <div class="publication-item">
+                    <p class="pub-title">Nanoparticles Engineered as Artificial Antigen Presenting Cells Induce Human CD4+ and CD8+ Tregs That Are Functional in Humanized Mice.</p>
+                    <p class="pub-details">Giang S, et al. &bull; <em>Frontiers in Immunology</em> (2021)</p>
+                </div>
+                <div class="publication-item">
+                    <p class="pub-title">Anti-CD2 Antibody-coated nanoparticles containing IL-2 induce NK cells that protect lupus mice via a TGF-β-dependent mechanism.</p>
+                    <p class="pub-details">Horwitz, DA, et al. &bull; <em>Frontiers in Immunology</em> (2020)</p>
+                </div>
+                <div class="publication-item">
+                    <p class="pub-title">Suppression of Murine Lupus by CD4+ and CD8+ Treg Cells Induced by T Cell-Targeted Nanoparticles.</p>
+                    <p class="pub-details">Horwitz DA, et al. &bull; <em>Arthritis & Rheumatology</em> (2020)</p>
+                </div>
+                <div class="publication-item">
+                    <p class="pub-title">Rebalancing Immune Homeostasis to Treat Autoimmune Diseases.</p>
+                    <p class="pub-details">Horwitz DA, et al. &bull; <em>Trends in Immunology</em> (2019)</p>
+                </div>
+                 <div class="publication-item">
+                    <p class="pub-title">Suppression of Murine Lupus by CD4+ and CD8+ Treg Cells Induced by T Cell-Targeted Nanoparticles.</p>
+                    <p class="pub-details">Horwitz DA, et al. &bull; <em>Arthritis & Rheumatology</em> (2019)</p>
+                </div>
+                <div class="publication-item">
+                    <p class="pub-title">Paracrine co-delivery of TGF-β and IL-2 using CD4-targeted nanoparticles for induction and maintenance of regulatory T cells.</p>
+                    <p class="pub-details">McHugh MD, et al. &bull; <em>Biomaterials</em> (2015)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="team section" id="team">
         <div class="section-container">
             <div class="section-header">
@@ -1020,6 +1115,7 @@
             <div class="footer-links">
                 <a href="#about">About</a>
                 <a href="#technology">Technology</a>
+                <a href="#publications">Publications</a>
                 <a href="#team">Leadership</a>
                 <a href="#contact">Contact</a>
             </div>
